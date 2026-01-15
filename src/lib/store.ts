@@ -40,7 +40,7 @@ function getBaseUrl(): string {
 
 // --- Course Management ---
 export async function getCourses(): Promise<Course[]> {
-  const url = `${API_BASE_URL_ROUTING}api/course`;
+  const url = `${API_BASE_URL_ROUTING}api/courses`;  
   console.log(getBaseUrl())
   try {
 
