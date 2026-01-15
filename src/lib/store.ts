@@ -8,8 +8,8 @@ import {
   tas as mockInitialTAs, tas
 } from './data';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://34.198.205.91:8080';
-const API_BASE_URL_ROUTING = 'https://master.d2hh6o27ll1srl.amplifyapp.com/';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://schedemy-alb-e9da77a8059a935d.eu-central-1.elb.amazonaws.com:8080';
+const API_BASE_URL_ROUTING = `${API_BASE_URL.replace(/\/+$/, '')}/`;
 // const API_BASE_URL_ROUTING = 'http://localhost:3001/';
 
 interface AppState {
