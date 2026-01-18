@@ -8,7 +8,10 @@ import {
   tas as mockInitialTAs, tas
 } from './data';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://schedemy-alb-e9da77a8059a935d.eu-central-1.elb.amazonaws.com:8080';
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_BASE_URL ||
+  'http://schedemy-alb-1452462431.eu-central-1.elb.amazonaws.com';
+
 const API_BASE_URL_ROUTING = `${API_BASE_URL.replace(/\/+$/, '')}/`;
 // const API_BASE_URL_ROUTING = 'http://localhost:3001/';
 
