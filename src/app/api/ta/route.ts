@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-const TA_API_URL = 'http://34.198.205.91:8080/instructor/ta';
+const TA_API_URL = 'http://34.229.79.51:8080/instructor/ta';
 
 export async function GET() {
   try {
