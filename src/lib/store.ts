@@ -348,7 +348,7 @@ export async function getFullScheduledEntries(): Promise<FullScheduleEntry[]> {
 
 
 export async function addScheduleEntry(entry: Omit<ScheduleEntry, 'id'>): Promise<ScheduleEntry> {
-  const url = '/api/schedules'; // Call internal API route
+  const url = `${API_BASE_URL_ROUTING}api/schedules`; // Call Spring Boot via ALB
   try {
     const apiEntry = {
       course: entry.courseId ? { id: parseInt(entry.courseId) } : null,
@@ -465,25 +465,19 @@ export async function getInstructors(): Promise<Instructor[]> {
 export async function getTimeSlot(): Promise<TimeSlot[]> {
   const url = `${API_BASE_URL}/time`;
 
-  try {
-    const response = await fetch('/api/timeSlot', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+  const response = await fetch(url, {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+    cache: 'no-store',
+  });
 
-    if (!response.ok) {
-      throw new Error(`Failed to fetch time slots: ${response.status} ${response.statusText}`);
-    }
-
-    const timeSlots: TimeSlot[] = await response.json();
-    return timeSlots;
-  } catch (error) {
-    console.error('Error fetching time slots:', error);
-    throw error;
+  if (!response.ok) {
+    throw new Error(`Failed to fetch time slots: ${response.status} ${response.statusText}`);
   }
+
+  return (await response.json()) as TimeSlot[];
 }
+
 
 export function getInstructorById(id: string): Instructor | undefined {
   // This still uses mock data. Needs API integration if you want to fetch a single instructor.
