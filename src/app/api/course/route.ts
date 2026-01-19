@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
   try {
-    const res = await fetch('http://54.145.35.49:8080/courses', { cache: 'no-store' });
+    const res = await fetch('http://https://api.ayoub.htufolio.com:8080/courses', { cache: 'no-store' });
 
     if (!res.ok) {
       throw new Error(`Failed to fetch courses. Status: ${res.status}`);
