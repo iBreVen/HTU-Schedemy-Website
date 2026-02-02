@@ -28,4 +28,4 @@ This method deletes a scheduled class from the system. It removes the class from
 
 For deployment instructions and additional configuration details, the back-end GitHub repository should be reviewed, as it contains the necessary information for correctly deploying the application.
 
-https://github.com/YazanShannek/HTU-Schedemy-Website-Backend.git
+https://github.com/iBreVen/HTU-Schedemy-Website-Backend
